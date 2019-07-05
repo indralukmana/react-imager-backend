@@ -4,12 +4,10 @@ const Schema = mongoose.Schema;
 const ImageSchema = new Schema({
   imageName: {
     type: String,
-    default: 'none',
-    required: true
+    default: 'none'
   },
-  imageData: {
-    type: String,
-    required: true
+  image: {
+    type: String
   },
   imageProps: {
     type: Schema.Types.Mixed

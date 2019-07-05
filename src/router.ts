@@ -5,9 +5,11 @@ const ImageRouter = express.Router();
 
 ImageRouter.route('/uploadbase').post((req, res, next) => {
   console.log(req.body);
+  const { imageName, image, imageProps } = req.body;
   const newImage = new Image({
-    imageName: req.body.imageName,
-    imageData: req.body.imageData
+    imageName,
+    image,
+    imageProps
   });
 
   newImage
