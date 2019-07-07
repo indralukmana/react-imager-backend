@@ -9,9 +9,9 @@ import cors from 'cors';
 import ImageRouter from './router';
 
 mongoose.Promise = bluebird;
-const mongoUrl = process.env.mongoUrl ? process.env.mongoUrl : config.mongoUrl;
+const mongoUrl = process.env.MONGODB_URI || config.mongoUrl;
 
-const port = 5555;
+const port = process.env.PORT || 5555;
 
 const app: Application = express();
 
