@@ -23,4 +23,9 @@ ImageRouter.route('/uploadbase').post((req, res, next) => {
     .catch(err => next(err));
 });
 
+ImageRouter.route('/all').get(async (req, res) => {
+  const result = await Image.find({});
+  res.send(result);
+});
+
 export default ImageRouter;
